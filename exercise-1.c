@@ -30,5 +30,5 @@ void main() {
         }
         printf("(%d) ", vetor[i]);
     }
-    return;
+    return 0;
 }
