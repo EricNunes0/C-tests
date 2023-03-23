@@ -2,7 +2,7 @@
 
 int main() {
     int max = 50;
-    int nota1[max], nota2[max], i, aux, n1;
+    int nota1[max], nota2[max], i, aux, n1, n2;
     char matriculas[max][30];
     while(i <= max) {
         printf("Deseja inserir um novo aluno? (1 - Sim | 2 - Não) ");
@@ -11,11 +11,11 @@ int main() {
             printf("Informe a matrícula do %d aluno: ", i + 1);
             scanf("%s", &matriculas[i][30]);
             n1 = 11;
-            while(n > 10) {
+            while(n1 > 10) {
                 printf("Informe a primeira nota do aluno: ");
-                scanf("%d", &n);
+                scanf("%d", &n1);
             }
-            nota1[i] = n;
+            nota1[i] = n1;
             printf("Informe a segunda nota do aluno: ");
             scanf("%d", &nota2[i]);
             i++;
