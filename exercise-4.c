@@ -13,7 +13,7 @@ int main() {
             }
         }
         printf("\n◣━━━━━━━━━━━━━━━━━━━━━━━━◢\n");
-        printf("\n💿 1 - Adicionar a fila\n2 - Avançar a fila\nInforme sua próxima ação: ");
+        printf("\n👤 1 - Adicionar a fila;\n⏪ 2 - Avançar a fila;\nInforme sua próxima ação: ");
         scanf("%d", &follow);
         if(follow == 1) {
             int maxCheck = 0, k;
@@ -45,7 +45,7 @@ int main() {
             }
             i = i - 2;
             if(i < 0) {
-                i = 0;
+                i = -1;
             };
         } else {
             printf("❌ Operação inválida!\n");
