@@ -13,7 +13,7 @@ int main() {
             }
         }
         printf("\n◣━━━━━━━━━━━━━━━━━━━━━━━━◢\n");
-        printf("\n👤 1 - Adicionar a fila;\n⏪ 2 - Avançar a fila;\nInforme sua próxima ação: ");
+        printf("\n👤 1 - Adicionar a fila;\n⏪ 2 - Avançar a fila;\n🛑 3 - Encerrar fila;\nInforme sua próxima ação: ");
         scanf("%d", &follow);
         if(follow == 1) {
             int maxCheck = 0, k;
@@ -22,7 +22,7 @@ int main() {
                     if(fila[k] != 0) {
                         maxCheck++;
                         if(maxCheck >= filaMax) {
-                            printf("\nFila cheia!\n");
+                            printf("\n❗ Fila cheia!\n");
                             break;
                         }
                     }
@@ -31,7 +31,18 @@ int main() {
             if(k > i) {
                 printf("\n📀 Informe o ID do usuário: ");
                 scanf("%d", &id);
-                fila[i] = id;
+                int l;
+                for(l = 0; l <= max; l++) {
+                    if(id == fila[l]) {
+                        printf("❗ Este ID já está registrado na fila!\n");
+                        break;
+                    }
+                }
+                if(l > i) {
+                    fila[i] = id;
+                } else {
+                    i--;
+                }
             } else {
                 i--;
             }
@@ -47,9 +58,26 @@ int main() {
             if(i < 0) {
                 i = -1;
             };
+        } else if(follow == 3) {
+            if(i > 0) {
+                int confirmCancel;
+                printf("✅ 1 - Sim | ❌ Qualquer dígito - Não\n❕ Ainda resta %d usuário(s) na fila! Tem certeza de que deseja encerrar? ", i);
+                scanf("%d", &confirmCancel);
+                if(confirmCancel == 1) {
+                    printf("🛑 Fila encerrada com %d usuário(s) restantes!\n", i);
+                    break;
+                } else {
+                    printf("🟢 Fila retomada!\n");
+                    i--;
+                }
+            } else {
+                printf("🛑 Fila encerrada!\n", i);
+                break;
+            }
         } else {
             printf("❌ Operação inválida!\n");
             i--;
         }
     }
+    return;
 }
