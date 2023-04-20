@@ -10,12 +10,12 @@ struct aluno {
 };
 
 int main() {
-    int lin = 3;
+    int lin = 1;
     struct aluno alunos[lin];
     for(int i = 0; i <= lin - 1; i++) {
         printf("╒◖════════════════════════════◗╕\n");
         char n[100];
-        char g[1];
+        char g[100];
         int mat;
         float n1, n2;
         printf("🔴 Informe o nome do %dº aluno: ", i + 1);
