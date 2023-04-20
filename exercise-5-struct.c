@@ -10,7 +10,7 @@ struct aluno {
 };
 
 int main() {
-    int lin = 1;
+    int lin = 3;
     struct aluno alunos[lin];
     for(int i = 0; i <= lin - 1; i++) {
         printf("╒◖════════════════════════════◗╕\n");
