@@ -121,10 +121,25 @@ int main() {
                         printf("🔘 1 - Nome;\n🔘 2 - Sobrenome;\n🔘 3 - Idade;\n🔘 4 - CPF;\n🔘 5 - Email:\n🔵 O que deseja alterar? ");
                         scanf("%d", &edit);
                         if(edit == 1) {
-                            struct Cadastro addCadastro(); //CORRIGIR AQUI!!!
-                            struct Cadastro e;
-                            e = addCadastro(0);
-                            alu[i].name = e.name;
+                            printf("🟡 Informe o nome: ");
+                            scanf("%s", &alu[i].name);
+                            printf("🟢 Nome editado com sucesso!\n");
+                        } else if(edit == 2) {
+                            printf("🟡 Informe o sobrenome: ");
+                            scanf("%s", &alu[i].sobrenome);
+                            printf("🟢 Sobrenome editado com sucesso!\n");
+                        } else if(edit == 3) {
+                            printf("🟡 Informe a idade: ");
+                            scanf("%d", &alu[i].age);
+                            printf("🟢 Idade editada com sucesso!\n");
+                        } else if(edit == 4) {
+                            printf("🟡 Informe o CPF: ");
+                            scanf("%d", &alu[i].cpf);
+                            printf("🟢 CPF editado com sucesso!\n");
+                        } else if(edit == 5) {
+                            printf("🟡 Informe o email: ");
+                            scanf("%s", &alu[i].email);
+                            printf("🟢 Email editado com sucesso!\n");
                         }
                     }
                 }
