@@ -16,7 +16,7 @@ int main() {
     int cmd = 1, aux = 0;
     struct Cadastro alu[alunosLength];
     while(cmd != 0) {
-        printf("(C) 1 - Inserir cadastro:\n(R) 2 - Consultar cadastro:\n(U) 3 - Alterar cadastro:\n🔵 Informe a sua próxima ação: ");
+        printf("1 - Inserir cadastro:\n2 - Consultar cadastro:\n3 - Alterar cadastro:\n🔵 Informe a sua próxima ação: ");
         scanf("%d", &cmd);
         if(cmd == 1) {
             struct Cadastro addCadastro();
@@ -105,7 +105,7 @@ int main() {
             }
         } else if(cmd == 3) {
             int consult = 0;
-            printf("🔘 1 - Nome;\n🔘 2 - Sobrenome;\n🔘 3 - Idade;\n🔘 4 - CPF;\n🔘 5 - Email:\n🔵 Pelo o que deseja consultar o cadastro para alterá-lo? ");
+            printf("🔘 1 - Nome;\n🔘 2 - Sobrenome;\n🔘 3 - CPF;\n🔘 4 - Email:\n🔵 Pelo o que deseja consultar o cadastro para alterá-lo? ");
             scanf("%d", &consult);
             if(consult == 1) {
                 char search[50];
@@ -114,6 +114,122 @@ int main() {
                 int resultsFound = 0;
                 for(int i = 0; i <= aux - 1; i++) {
                     int output = strcmp(alu[i].name, search);
+                    if(output == 0) {
+                        printCadastro(alu[i]);
+                        resultsFound++;
+                        int edit = 0;
+                        printf("🔘 1 - Nome;\n🔘 2 - Sobrenome;\n🔘 3 - Idade;\n🔘 4 - CPF;\n🔘 5 - Email:\n🔵 O que deseja alterar? ");
+                        scanf("%d", &edit);
+                        if(edit == 1) {
+                            printf("🟡 Informe o nome: ");
+                            scanf("%s", &alu[i].name);
+                            printf("🟢 Nome editado com sucesso!\n");
+                        } else if(edit == 2) {
+                            printf("🟡 Informe o sobrenome: ");
+                            scanf("%s", &alu[i].sobrenome);
+                            printf("🟢 Sobrenome editado com sucesso!\n");
+                        } else if(edit == 3) {
+                            printf("🟡 Informe a idade: ");
+                            scanf("%d", &alu[i].age);
+                            printf("🟢 Idade editada com sucesso!\n");
+                        } else if(edit == 4) {
+                            printf("🟡 Informe o CPF: ");
+                            scanf("%d", &alu[i].cpf);
+                            printf("🟢 CPF editado com sucesso!\n");
+                        } else if(edit == 5) {
+                            printf("🟡 Informe o email: ");
+                            scanf("%s", &alu[i].email);
+                            printf("🟢 Email editado com sucesso!\n");
+                        }
+                    }
+                }
+                if(resultsFound == 0) {
+                    printf("🔴 Nenhum usuário encontrado! :(\n");
+                }
+            } else if(consult == 2) {
+                char search[50];
+                printf("🔎 Informe o sobrenome da pessoa que deseja consultar: ");
+                scanf("%s", &search);
+                int resultsFound = 0;
+                for(int i = 0; i <= aux - 1; i++) {
+                    int output = strcmp(alu[i].sobrenome, search);
+                    if(output == 0) {
+                        printCadastro(alu[i]);
+                        resultsFound++;
+                        int edit = 0;
+                        printf("🔘 1 - Nome;\n🔘 2 - Sobrenome;\n🔘 3 - Idade;\n🔘 4 - CPF;\n🔘 5 - Email:\n🔵 O que deseja alterar? ");
+                        scanf("%d", &edit);
+                        if(edit == 1) {
+                            printf("🟡 Informe o nome: ");
+                            scanf("%s", &alu[i].name);
+                            printf("🟢 Nome editado com sucesso!\n");
+                        } else if(edit == 2) {
+                            printf("🟡 Informe o sobrenome: ");
+                            scanf("%s", &alu[i].sobrenome);
+                            printf("🟢 Sobrenome editado com sucesso!\n");
+                        } else if(edit == 3) {
+                            printf("🟡 Informe a idade: ");
+                            scanf("%d", &alu[i].age);
+                            printf("🟢 Idade editada com sucesso!\n");
+                        } else if(edit == 4) {
+                            printf("🟡 Informe o CPF: ");
+                            scanf("%d", &alu[i].cpf);
+                            printf("🟢 CPF editado com sucesso!\n");
+                        } else if(edit == 5) {
+                            printf("🟡 Informe o email: ");
+                            scanf("%s", &alu[i].email);
+                            printf("🟢 Email editado com sucesso!\n");
+                        }
+                    }
+                }
+                if(resultsFound == 0) {
+                    printf("🔴 Nenhum usuário encontrado! :(\n");
+                }
+            } else if(consult == 3) {
+                int search;
+                printf("🔎 Informe o CPF da pessoa que deseja consultar: ");
+                scanf("%d", &search);
+                int resultsFound = 0;
+                for(int i = 0; i <= aux - 1; i++) {
+                    if(alu[i].age == search) {
+                        printCadastro(alu[i]);
+                        resultsFound++;
+                        int edit = 0;
+                        printf("🔘 1 - Nome;\n🔘 2 - Sobrenome;\n🔘 3 - Idade;\n🔘 4 - CPF;\n🔘 5 - Email:\n🔵 O que deseja alterar? ");
+                        scanf("%d", &edit);
+                        if(edit == 1) {
+                            printf("🟡 Informe o nome: ");
+                            scanf("%s", &alu[i].name);
+                            printf("🟢 Nome editado com sucesso!\n");
+                        } else if(edit == 2) {
+                            printf("🟡 Informe o sobrenome: ");
+                            scanf("%s", &alu[i].sobrenome);
+                            printf("🟢 Sobrenome editado com sucesso!\n");
+                        } else if(edit == 3) {
+                            printf("🟡 Informe a idade: ");
+                            scanf("%d", &alu[i].age);
+                            printf("🟢 Idade editada com sucesso!\n");
+                        } else if(edit == 4) {
+                            printf("🟡 Informe o CPF: ");
+                            scanf("%d", &alu[i].cpf);
+                            printf("🟢 CPF editado com sucesso!\n");
+                        } else if(edit == 5) {
+                            printf("🟡 Informe o email: ");
+                            scanf("%s", &alu[i].email);
+                            printf("🟢 Email editado com sucesso!\n");
+                        }
+                    }
+                }
+                if(resultsFound == 0) {
+                    printf("🔴 Nenhum usuário encontrado! :(\n");
+                }
+            } else if(consult == 4) {
+                char search[50];
+                printf("🔎 Informe o email da pessoa que deseja consultar: ");
+                scanf("%s", &search);
+                int resultsFound = 0;
+                for(int i = 0; i <= aux - 1; i++) {
+                    int output = strcmp(alu[i].email, search);
                     if(output == 0) {
                         printCadastro(alu[i]);
                         resultsFound++;
