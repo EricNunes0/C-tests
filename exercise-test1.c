@@ -20,7 +20,7 @@ int main() {
             cad[i][2] = n2;
             i++;
         } else if(aux == 2) {
-            printf("PROGRAMA ENCERRADO!");
+            printf("❌️ PROGRAMA ENCERRADO!");
             aux = 0;
         }
     }
